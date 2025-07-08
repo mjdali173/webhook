@@ -16,6 +16,19 @@ const WHATSAPP_PHONE_NUMBER_ID = 'your_phone_number_id';
 
 // 1. استقبال Webhook من WhatsApp (الرسائل الواردة)
 app.post('/webhook', async (req, res) => {
+    const VERIFY_TOKEN = 'my_verify_token';
+
+  const mode = req.query['hub.mode'];
+  const token = req.query['hub.verify_token'];
+  const challenge = req.query['hub.challenge'];
+
+  if (mode === 'subscribe' && token === VERIFY_TOKEN) {
+    console.log('WEBHOOK_VERIFIED');
+    res.status(200).send(challenge);
+  } else {
+    res.sendStatus(403);
+  }
+
   const webhookData = req.body;
 
   // تحقق من نوع الرسالة حسب هيكل WhatsApp Cloud API
