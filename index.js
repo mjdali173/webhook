@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // إعداداتك
-const CHATWOOT_BASE_URL = 'https://app.chatwoot.com/webhooks/whatsapp/b1a85333cc9c4654997aa94ef116095f';
+const CHATWOOT_BASE_URL = 'https://app.chatwoot.com/webhooks/whatsapp/+15557844350';
 const CHATWOOT_API_TOKEN = 'b1a85333cc9c4654997aa94ef116095f';
 const CHATWOOT_ACCOUNT_ID = '126907'; // عادة 1 إذا حساب واحد
 const CHATWOOT_INBOX_ID = '0';
